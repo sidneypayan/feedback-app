@@ -1,11 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type RatingSelectProps = {
 	select: (rating: number) => void
+	rating: number
 }
 
-const RatingSelect = ({ select }: RatingSelectProps) => {
-	const [selected, setSelected] = useState(5)
+const RatingSelect = ({ select, rating }: RatingSelectProps) => {
+	const [selected, setSelected] = useState(rating)
+
+	useEffect(() => {
+		setSelected(rating)
+	}, [select])
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setSelected(+e.currentTarget.value)

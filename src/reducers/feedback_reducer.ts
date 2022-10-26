@@ -42,6 +42,7 @@ const feedback_reducer = (
 			const id = action.payload.id
 			return {
 				...state,
+				edit: false,
 				feedback: state.feedback.map(item =>
 					item.id === id ? { ...item, ...action.payload } : item
 				),

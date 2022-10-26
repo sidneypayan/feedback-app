@@ -12,6 +12,7 @@ const FeedbackForm = () => {
 	useEffect(() => {
 		if (edit) {
 			setComment(feedbackEdit.comment)
+			setRating(feedbackEdit.rating)
 		}
 	}, [feedbackEdit])
 
@@ -25,6 +26,7 @@ const FeedbackForm = () => {
 			}
 		}
 		setComment('')
+		setRating(5)
 	}
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +36,7 @@ const FeedbackForm = () => {
 		<div className='card'>
 			<form onSubmit={handleSubmit}>
 				<h2>Comment noteriez-vous notre service ?</h2>
-				<RatingSelect select={rating => setRating(rating)} />
+				<RatingSelect rating={rating} select={rating => setRating(rating)} />
 				<div className='input-group'>
 					<input
 						type='text'
