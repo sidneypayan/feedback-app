@@ -9,7 +9,7 @@
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"server": "json-server --watch db.json --port 5000",
-		"srev": "concurrently \"npm run server\" \"npm run dev\""
+		"sdev": "concurrently \"npm run server\" \"npm run dev\""
 	},
 	"dependencies": {
 		"concurrently": "^7.5.0",
