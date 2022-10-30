@@ -20,6 +20,7 @@ type FeedbackContext = {
 }
 
 const FeedbackContext = createContext({} as FeedbackContext)
+// const FeedbackContext = createContext<null | FeedbackContext>(null)
 
 const initialState = {
 	feedback: [],
